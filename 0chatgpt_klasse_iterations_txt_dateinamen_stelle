@@ -1,0 +1,13 @@
+ich möchte ein K-NN Modell trainieren auf Basis von vielen .csv-Dateien, die Klasse soll dabei wie folgt entnommen werden:
+Dabei sollen alle iterierenden Textdateien, die beispielsweise so iteriert werden:
+input_path = '/home/boris.grillborzer/PycharmProjects/SecondOrial/IntelliRehabDSv0/SkeletonData/RawData'
+
+    def apply_osp(input_path):
+        for root, dirs, files in os.walk(input_path):
+            files = sorted([f for f in files if f.endswith(".txt")])
+            for file in files:
+                input_file_path = os.path.join(root, file)
+
+die ein immer mit Unterstrichen getrenntes Format haben: 101_18_0_2_1_stand.txt bitte die letzte Ziffer, in dem Fall die '1' als Eintrag als Klassifierung hernehmen.
+
+Kannst du mir eine k-NN-Algorithmus dafür schreiben? Als Anlehnung, die gut funktioniert wäre: https://www.kaggle.com/code/alincijov/iris-k-nn-numpy-from-scratch
